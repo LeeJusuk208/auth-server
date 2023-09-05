@@ -47,15 +47,15 @@
         secret-key : "Your Secret Key"
 
     spring:
-    datasource:
-        url: jdbc:mariadb://[Your DataBase IP]/[DB name]?useUnicode=true&characterEncoding=utf-8
-        driver-class-name: org.mariadb.jdbc.Driver
-        username: admin
-        password: passwd
-    session:
-        timeout: 600
-        store-type: jdbc
-        jdbc:
-        initialize-schema: never
-        table-name: [Table name]
+        datasource:
+            url: jdbc:mariadb://[Your DataBase IP]/[DB name]?useUnicode=true&characterEncoding=utf-8
+            driver-class-name: org.mariadb.jdbc.Driver
+            username: admin
+            password: passwd
+        session:
+            timeout: 600
+            store-type: jdbc
+            jdbc:
+                initialize-schema: never
+                table-name: [Table name]
     ```
