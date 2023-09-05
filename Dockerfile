@@ -24,7 +24,7 @@ RUN apt-get update;
 RUN apt-get install -y openjdk-17-jre;
 RUN apt-get clean;
 
-COPY --from=build /home/gradle/project/auth-service/build/libs/auth-server-1.0.jar .
+COPY --from=build /home/gradle/project/build/libs/auth-server-1.0.jar .
 
 CMD ["java", "-jar", "-Dspring.profiles.active=prod", "auth-server-1.0.jar"]
 
