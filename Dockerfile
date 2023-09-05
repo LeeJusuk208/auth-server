@@ -5,15 +5,15 @@ WORKDIR /home/gradle/project
 
 RUN apt-get update;
 RUN apt-get install -y openjdk-17-jdk;
-RUN apt-get install -y unzip zip;
+# RUN apt-get install -y unzip zip;
 RUN apt-get clean;
 
 COPY . .
 
-RUN mkdir -p /root/.gradle
-RUN echo "systemProp.http.proxyHost=krmp-proxy.9rum.cc\nsystemProp.http.proxyPort=3128\nsystemProp.https.proxyHost=krmp-proxy.9rum.cc\nsystemProp.https.proxyPort=3128" > /root/.gradle/gradle.properties
+# RUN mkdir -p /root/.gradle
+# RUN echo "systemProp.http.proxyHost=krmp-proxy.9rum.cc\nsystemProp.http.proxyPort=3128\nsystemProp.https.proxyHost=krmp-proxy.9rum.cc\nsystemProp.https.proxyPort=3128" > /root/.gradle/gradle.properties
 
-RUN ./gradle_build.sh
+RUN ./gradlew clean build
 
 # Stage 2: Run the application
 FROM ubuntu:20.04
