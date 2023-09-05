@@ -16,8 +16,8 @@ jobs:
         name: set env
         run: |
           mkdir -p ./src/main/resources
-          touch ./src/main/resources/application.properties
-          echo "${{secrets.APPLICATION_YML}}" > ./src/main/resources/application.properties
+          touch ./src/main/resources/application.yml
+          echo "${{secrets.APPLICATION_YML}}" > ./src/main/resources/application.yml
       - 
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
